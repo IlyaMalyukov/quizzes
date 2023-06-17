@@ -1,9 +1,24 @@
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useQuizzesStore } from "../../app/stores/quizzes";
 
 export const useMainPage = () => {
-    const count = ref(0);
+    const isLoading = ref(true);
+
+    const quizzesList = ref([]);
+
+    const quizzesStore = useQuizzesStore();
+
+    const loadQuizzes = async () => await quizzesStore.getQuizzesList();
+
+    onMounted(async () => {
+        await loadQuizzes();
+        quizzesList.value = quizzesStore.list;
+        setTimeout(() => isLoading.value = false, 1000);
+    });
 
     return {
-        count,
+        isLoading,
+        quizzesList,
+        loadQuizzes,
     };
 };
