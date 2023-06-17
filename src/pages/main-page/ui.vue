@@ -6,9 +6,7 @@
 
   axios({
     method: 'GET',
-    params: {
-      limit: 10,
-    },
+    url: '/quizzes',
   })
 </script>
 
