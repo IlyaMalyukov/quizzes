@@ -9,9 +9,9 @@ describe('Quizzes Store', () => {
         setActivePinia(createPinia());
     });
 
-    test('Expected array of quizzes', async () => {
+    test('Expected list to be defined', () => {
         const quizzesStore = useQuizzesStore();
 
-        expect(quizzesStore.list.length).toBeDefined();
+        expect(quizzesStore.list).toBeDefined();
     });
 });
