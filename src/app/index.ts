@@ -3,7 +3,7 @@ import { createPinia } from 'pinia'
 import './style.css'
 import App from './ui.vue'
 
-import {worker} from "../__mocks__";
+import { worker } from "../__mocks__";
 
 await worker.start();
 

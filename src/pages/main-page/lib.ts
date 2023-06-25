@@ -1,5 +1,5 @@
 import { ref, onMounted } from 'vue'
-import { useQuizzesStore } from "../../app/stores/quizzes";
+import { useQuizzesStore } from '../../app/stores/quizzes';
 
 export const useMainPage = () => {
     const isLoading = ref(true);
