@@ -1,18 +1,17 @@
-import { defineStore } from "pinia";
-import { ref } from "vue";
-import { axios } from "../../shared";
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
+import { getQuizzesAgent } from '../../pages/main-page';
 
 export const useQuizzesStore = defineStore('quizzes', () => {
     const list = ref([]);
 
     const getQuizzesList = async () => {
-        const res = await axios({
-            method: 'GET',
-            url: '/quizzes',
-        });
+        const agent = getQuizzesAgent();
+
+        const res = await agent.getQuizzesList();
 
         list.value = res.data.content;
-    }
+    };
 
     return {
         list,
