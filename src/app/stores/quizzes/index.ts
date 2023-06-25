@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
-import { getQuizzesAgent } from '../../pages/main-page';
+import {Ref, ref} from 'vue';
+import { getQuizzesAgent } from '../../../pages/main-page';
+
+import type { QuizzesList } from './types';
 
 export const useQuizzesStore = defineStore('quizzes', () => {
-    const list = ref([]);
+    const list: Ref<QuizzesList> = ref([]);
 
     const getQuizzesList = async () => {
         const agent = getQuizzesAgent();

@@ -1,10 +1,12 @@
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, Ref } from 'vue';
 import { useQuizzesStore } from '../../app/stores/quizzes';
+
+import type { QuizzesList } from '../../app/stores/quizzes/types';
 
 export const useMainPage = () => {
     const isLoading = ref(true);
 
-    const quizzesList = ref([]);
+    const quizzesList: Ref<QuizzesList> = ref([]);
 
     const quizzesStore = useQuizzesStore();
 
