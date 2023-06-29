@@ -10,9 +10,13 @@ export const useQuizzesStore = defineStore('quizzes', () => {
     const getQuizzesList = async () => {
         const agent = getQuizzesAgent();
 
-        const res = await agent.getQuizzesList();
+        try {
+            const { data } = await agent.getQuizzesList();
 
-        list.value = res.data.content;
+            list.value = data.content;
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return {
