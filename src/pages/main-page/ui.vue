@@ -11,6 +11,8 @@ const {
 
 <template>
   <div class="content">
+    <h1> Квизы </h1>
+    <br>
     <p v-if="isLoading"> Загрузка... </p>
     <div v-else class="quiz-cards">
       <quiz-card v-for="quiz in quizzesList" :key="quiz.id" :quiz="quiz"/>
