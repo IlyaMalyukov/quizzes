@@ -14,12 +14,4 @@ describe('Main Page', () => {
 
         expect(quizzesList).toBeDefined();
     });
-
-    // test('Expected list to have quizzes', async () => {
-    //     const { quizzesList, loadQuizzes } = useMainPage();
-    //
-    //     await loadQuizzes();
-    //
-    //     expect(quizzesList.value.length).toBe(3);
-    // });
 });
