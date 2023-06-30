@@ -1,7 +1,7 @@
 import { ref, onMounted, Ref } from 'vue';
-import { useQuizzesStore } from '../../app/stores/quizzes';
+import { useQuizzesStore } from '@/app/stores/quizzes';
 
-import type { QuizzesList } from '../../app/stores/quizzes/types';
+import type { QuizzesList } from '@/app/stores/quizzes/types';
 
 export const useMainPage = () => {
     const isLoading = ref(true);

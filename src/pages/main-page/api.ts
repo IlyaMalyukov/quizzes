@@ -1,4 +1,4 @@
-import { axios } from "../../shared";
+import { axios } from "@/shared";
 
 export const getQuizzesAgent = () => {
     const getQuizzesList = async () => {

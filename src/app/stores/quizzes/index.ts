@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import {Ref, ref} from 'vue';
-import { getQuizzesAgent } from '../../../pages/main-page';
+import { getQuizzesAgent } from '@/pages/main-page';
 
 import type { QuizzesList } from './types';
 

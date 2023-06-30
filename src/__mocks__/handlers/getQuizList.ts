@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { API_PATHS } from "../../shared/config";
+import { API_PATHS } from "@/shared/config";
 
 export const getQuizList = [
     rest.get(`${ API_PATHS.BASE }/quizzes`, (req, res, ctx) => res(
