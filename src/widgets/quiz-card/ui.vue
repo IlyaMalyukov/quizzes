@@ -10,7 +10,6 @@ defineProps({
 
 <template>
   <div class="quiz-card">
-    <pre> 111 </pre>
     <span class="quiz-card__title"> {{ quiz.title }} </span>
   </div>
 </template>

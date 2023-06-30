@@ -1,15 +1,19 @@
 <script setup lang="ts">
-  import { useMainPage } from "./lib";
+import { useMainPage } from "./lib";
+import { QuizCard } from "@/widgets"
 
-  const {
-    isLoading,
-    quizzesList,
-  } = useMainPage();
+
+const {
+  isLoading,
+  quizzesList,
+} = useMainPage();
 </script>
 
 <template>
-  <div class="card">
+  <div class="content">
     <p v-if="isLoading"> Загрузка... </p>
-    <pre v-else> {{ quizzesList }} </pre>
+    <div v-else class="quiz-cards">
+      <quiz-card v-for="quiz in quizzesList" :key="quiz.id" :quiz="quiz"/>
+    </div>
   </div>
 </template>
