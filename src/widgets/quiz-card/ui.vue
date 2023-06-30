@@ -9,7 +9,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="quiz-card">
-    <span class="quiz-card__title"> {{ quiz.title }} </span>
-  </div>
+  <v-card :title="quiz.title" theme="dark" class="mb-5">
+    <template #actions>
+      <v-btn variant="text" color="#3CB371">Пройти квиз</v-btn>
+    </template>
+  </v-card>
 </template>
