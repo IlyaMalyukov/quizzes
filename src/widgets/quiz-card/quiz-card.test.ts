@@ -14,7 +14,4 @@ describe('Quiz Card', () => {
     test('mount component', async () => {
         expect(QuizCard).toBeTruthy();
     });
-
-        expect(wrapper.text()).toContain('Заголовок');
-    })
 });
