@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 
 import { MainPage } from '@/pages/main-page';
+import { QuizPage } from '@/pages/quiz-page';
 
 const routes: RouteRecordRaw[] = [
     {
@@ -9,12 +10,11 @@ const routes: RouteRecordRaw[] = [
         name: 'main-page',
         component: MainPage,
     },
-    // {
-    //     path: '/quiz/:id',
-    //     name: 'quiz-page',
-    //     // TO DO добавить страницу квиза
-    //     component: () => import('@/pages/quiz-page'),
-    // },
+    {
+        path: '/quiz/:id',
+        name: 'quiz-page',
+        component: QuizPage,
+    },
 
     // {
     //     path: '/:pathMatch(.*)*',
