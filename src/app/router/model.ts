@@ -1,0 +1,32 @@
+import { createRouter, createWebHistory } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+
+import { MainPage } from '@/pages/main-page';
+
+const routes: RouteRecordRaw[] = [
+    {
+        path: '/',
+        name: 'main-page',
+        component: MainPage,
+    },
+    // {
+    //     path: '/quiz/:id',
+    //     name: 'quiz-page',
+    //     // TO DO добавить страницу квиза
+    //     component: () => import('@/pages/quiz-page'),
+    // },
+
+    // {
+    //     path: '/:pathMatch(.*)*',
+    //     name: 'not-found',
+    //     // TO DO добавить страницу 404
+    //     component: () => import('@/pages/not-found'),
+    // },
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
+
+export default router;
