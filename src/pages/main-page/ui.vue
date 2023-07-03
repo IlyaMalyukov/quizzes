@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useMainPage } from "./lib";
 import { QuizCard } from "@/widgets"
+import { Loader } from "@/shared";
 
 
 const {
@@ -13,7 +14,7 @@ const {
   <div class="content">
     <h1> Квизы </h1>
     <br>
-    <p v-if="isLoading"> Загрузка... </p>
+    <loader v-if="isLoading"/>
     <div v-else class="quiz-cards">
       <quiz-card v-for="quiz in quizzesList" :key="quiz.id" :quiz="quiz"/>
     </div>
