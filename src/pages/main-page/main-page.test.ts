@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, test } from 'vitest'
 import { createPinia, setActivePinia } from 'pinia';
 
-import { useMainPage } from '@/pages/main-page/index'
+import { useMainPage } from '@/pages/main-page'
 
 
 describe('Main Page', () => {
