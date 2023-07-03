@@ -6,5 +6,4 @@ const route = useRoute();
 
 <template>
   <h1> Quiz page </h1>
-  <pre> {{ route.params }} </pre>
 </template>
