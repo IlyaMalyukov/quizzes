@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
         component: MainPage,
     },
     {
-        path: '/quiz/:id',
+        path: '/quiz',
         name: 'quiz-page',
         component: QuizPage,
     },
