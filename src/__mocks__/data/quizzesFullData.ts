@@ -6,7 +6,7 @@ export const quizzesFullData = [
             {
                 id: 0,
                 title: 'На каком факультете ты хотел бы учиться?',
-                img: 'https://ibb.co/LC2Ry9F',
+                img: 'https://i.ibb.co/Hrk4yGS/764587.webp',
                 answers: [
                     {
                         id: 0,
@@ -33,7 +33,7 @@ export const quizzesFullData = [
             {
                 id: 1,
                 title: 'Какое твоё любимое заклинание?',
-                img: 'https://ibb.co/M74Wcv4',
+                img: 'https://i.ibb.co/BBxdypx/7b3374c215ff342c60dea7398ea9-kantselyarskie-tovary-uchebnik-printsa-polukrovki.jpg',
                 answers: [
                     {
                         id: 0,
@@ -66,7 +66,7 @@ export const quizzesFullData = [
             {
                 id: 0,
                 title: 'Чё задали?',
-                img: 'https://ibb.co/kxsTRyD',
+                img: 'https://i.ibb.co/DtHFxbM/qblulgcbrwk-kopija.jpg',
                 answers: [
                     {
                         id: 0,
@@ -89,7 +89,7 @@ export const quizzesFullData = [
             {
                 id: 0,
                 value: 'А какая тебе нравится?',
-                img: 'https://ibb.co/wQxVqLk',
+                img: 'https://i.ibb.co/myMkKBj/orbit.webp',
                 answers: [
                     {
                         id: 0,
