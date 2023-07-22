@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMainPage } from './lib';
+import useMainPage from './lib';
 import { QuizCard } from '@/entities';
 import { Loader } from '@/shared';
 

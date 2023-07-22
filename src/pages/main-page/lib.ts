@@ -3,7 +3,7 @@ import { useQuizzesStore } from '@/app/stores/quizzes';
 
 import type { QuizzesList } from '@/app/stores/quizzes/types';
 
-export const useMainPage = () => {
+const useMainPage = () => {
     const isLoading = ref(true);
 
     const quizzesList: Ref<QuizzesList> = ref([]);
@@ -24,3 +24,5 @@ export const useMainPage = () => {
         loadQuizzes,
     };
 };
+
+export default useMainPage;
