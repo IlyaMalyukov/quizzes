@@ -1,4 +1,4 @@
-import { axios } from "@/shared";
+import { axios } from '@/shared';
 
 export const getQuizDataAgent = () => {
     const getQuizById = async (id) => {
