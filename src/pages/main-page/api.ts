@@ -1,7 +1,8 @@
-import { axios } from "@/shared";
+import { axios } from '@/shared';
+import { QuizzesList } from '@/app/stores/quizzes/types';
 
 export const getQuizzesAgent = () => {
-    const getQuizzesList = async () => {
+    const getQuizzesList = async (): Promise<QuizzesList> => {
         return await axios({
             method: 'GET',
             url: '/quizzes',
