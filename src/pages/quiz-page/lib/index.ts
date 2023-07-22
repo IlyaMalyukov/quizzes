@@ -1,6 +1,7 @@
 import { useRoute } from 'vue-router';
-import { onMounted, ref } from 'vue';
-import { getQuizDataAgent } from '@/pages/quiz-page/api';
+import {onMounted, Ref, ref} from 'vue';
+import { getQuizDataAgent } from '../api';
+import { Quiz } from './types';
 
 const useQuizPage = () => {
   const route = useRoute();
@@ -9,7 +10,7 @@ const useQuizPage = () => {
 
   const quizId = route.query.id;
 
-  const quiz = ref({});
+  const quiz: Ref<Quiz> = ref({});
 
   const currentQuestion = ref(0);
 
