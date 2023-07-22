@@ -9,11 +9,23 @@ defineProps({
 </script>
 
 <template>
-  <v-card :title="quiz.title" theme="dark" class="mb-5">
-    <template #actions>
-      <router-link :to="{ name: 'quiz-page', query: { id: quiz.id } }">
-        <v-btn variant="text" color="#3CB371">Пройти квиз</v-btn>
-      </router-link>
-    </template>
-  </v-card>
+  <div class="card">
+    <h3 class="card__title"> {{ quiz.title }} </h3>
+    <router-link :to="{ name: 'quiz-page', query: { id: quiz.id } }">
+      <v-btn variant="text" color="#3CB371">Пройти квиз</v-btn>
+    </router-link>
+  </div>
 </template>
+
+<style scoped>
+.card {
+  box-shadow: 15px 18px 5px -5px rgba(34, 34, 34, 0.6);
+  border: 2px solid #222;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.card__title {
+  padding-bottom: 30px;
+}
+</style>
