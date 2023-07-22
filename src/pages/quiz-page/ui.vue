@@ -1,22 +1,8 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { onMounted, ref } from 'vue';
 import { QuestionCard } from '@/widgets';
-import { getQuizDataAgent } from './api';
+import {useQuizPage} from '@/pages/quiz-page/lib';
 
-const route = useRoute();
-
-const agent = getQuizDataAgent();
-
-const quizId = route.query.id;
-
-const quiz = ref({});
-
-const currentQuestion = ref(0);
-
-onMounted(async () => {
-  quiz.value = await agent.getQuizById(quizId);
-})
+const { quiz, currentQuestion } = useQuizPage();
 </script>
 
 <template>
