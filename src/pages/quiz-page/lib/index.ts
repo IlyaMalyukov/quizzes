@@ -2,7 +2,7 @@ import { useRoute } from 'vue-router';
 import { onMounted, ref } from 'vue';
 import { getQuizDataAgent } from '@/pages/quiz-page/api';
 
-export const useQuizPage = () => {
+const useQuizPage = () => {
   const route = useRoute();
 
   const agent = getQuizDataAgent();
@@ -22,3 +22,5 @@ export const useQuizPage = () => {
     currentQuestion,
   }
 };
+
+export default useQuizPage;

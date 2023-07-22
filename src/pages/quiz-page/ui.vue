@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { QuestionCard } from '@/widgets';
-import {useQuizPage} from '@/pages/quiz-page/lib';
+import useQuizPage from './lib';
 
 const { quiz, currentQuestion } = useQuizPage();
 </script>
