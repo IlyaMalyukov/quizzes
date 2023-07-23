@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue';
+// import isNil from 'lodash/isNil'; TO DO разобраться почему не работает такой импорт
+import { isNil } from 'lodash';
 
 const props = defineProps({
   question: Object,
 })
 
-const selectedAnswer = ref('');
+const selectedAnswer = ref(undefined);
 </script>
 
 <template>
@@ -20,7 +22,7 @@ const selectedAnswer = ref('');
         color="primary"
       />
     </v-radio-group>
-    <v-btn :disabled="selectedAnswer === ''" class="mb-5"> Ответить </v-btn>
+    <v-btn :disabled="isNil(selectedAnswer)" class="mb-5"> Ответить </v-btn>
   </v-card>
 </template>
 
