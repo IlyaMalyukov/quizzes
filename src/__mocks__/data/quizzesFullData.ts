@@ -88,7 +88,7 @@ export const quizzesFullData = [
         questions: [
             {
                 id: 0,
-                value: 'А какая тебе нравится?',
+                title: 'А какая тебе нравится?',
                 img: 'https://i.ibb.co/myMkKBj/orbit.webp',
                 answers: [
                     {
