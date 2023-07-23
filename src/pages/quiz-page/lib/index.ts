@@ -8,7 +8,7 @@ const useQuizPage = () => {
 
   const agent = getQuizDataAgent();
 
-  const quizId = route.query.id;
+  const quizId = <string>route.query.id;
 
   const quiz: Ref<Quiz> = ref({});
 
