@@ -1,8 +1,8 @@
 <template>
-  <v-icon class="icon" icon="fas fa-fan" color="#3CB371" size="x-large"></v-icon>
+  <v-icon class="icon" icon="fas fa-fan" color="#3CB371" size="x-large"/>
 </template>
 
-<style>
+<style scoped>
 .icon {
   margin: 30px;
   animation: spin 1s linear infinite;

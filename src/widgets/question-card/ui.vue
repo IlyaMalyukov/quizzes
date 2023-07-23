@@ -26,7 +26,7 @@ const selectedAnswer = ref(undefined);
   </v-card>
 </template>
 
-<style>
+<style scoped>
 img {
   position: absolute;
   left: 0;
