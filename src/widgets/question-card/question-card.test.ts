@@ -40,8 +40,7 @@ describe('Question Card', () => {
     input.trigger('change');
     button.trigger('click');
 
-    expect(wrapper.vm.selectedAnswerId).toBe(1);
-
-    expect(wrapper.vm.selectedAnswer.title).toBe('Плохо');
+    expect(wrapper.vm.selectedAnswerId).toBe(0);
+    expect(wrapper.vm.selectedAnswer.title).toBe('Хорошо');
   });
 });
