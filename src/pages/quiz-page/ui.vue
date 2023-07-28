@@ -2,7 +2,11 @@
 import { QuestionCard } from '@/widgets';
 import useQuizPage from './lib';
 
-const { quiz, currentQuestion } = useQuizPage();
+const {
+  quiz,
+  currentQuestion,
+  toAnswer,
+} = useQuizPage();
 </script>
 
 <template>
@@ -11,6 +15,7 @@ const { quiz, currentQuestion } = useQuizPage();
       <h1> {{ quiz.title }} </h1>
       <question-card
         :question="question"
+        @on-answer="toAnswer"
       />
     </div>
   </div>

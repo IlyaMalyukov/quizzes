@@ -1,21 +1,30 @@
 <script setup lang="ts">
-import { defineProps, Ref, ref } from 'vue';
+import {
+  computed, ComputedRef, defineEmits, defineProps, Ref, ref,
+} from 'vue';
+import isNil from 'lodash/isNil';
 import type { propType } from 'vue';
-// import isNil from 'lodash/isNil'; TO DO разобраться почему не работает такой импорт
-import { isNil } from 'lodash';
-import { Question } from './types';
+import type { Question, Answer } from './lib/types';
 
 const props = defineProps({
   question: Object as propType<Question>,
-})
+});
 
-const selectedAnswer: Ref<number | undefined> = ref(undefined);
+const emit = defineEmits(['on-answer']);
+
+const selectedAnswerId: Ref<number | undefined> = ref(undefined);
+
+const selectedAnswer: ComputedRef<Answer> = computed(() => {
+  return props.question.answers.find((i: Answer) => i.id === selectedAnswerId.value)
+});
+
+const handleAnswer = () => emit('on-answer', selectedAnswer.value);
 </script>
 
 <template>
   <v-card class="card mt-10" :title="question.title" theme="dark">
     <img class="card__background" :src="props.question.img" alt="img"/>
-    <v-radio-group v-model="selectedAnswer" class="ml-5">
+    <v-radio-group v-model="selectedAnswerId" class="ml-5">
       <v-radio
         v-for="answer in question.answers"
         :key="answer.id"
@@ -26,7 +35,14 @@ const selectedAnswer: Ref<number | undefined> = ref(undefined);
         true-icon="far fa-circle-dot"
       />
     </v-radio-group>
-    <v-btn class="card__button" :disabled="isNil(selectedAnswer)" color="success"> Ответить </v-btn>
+    <v-btn
+        class="card__button"
+        :disabled="isNil(selectedAnswerId)"
+        color="success"
+        @click="handleAnswer"
+    >
+      Ответить
+    </v-btn>
   </v-card>
 </template>
 
