@@ -1,10 +1,10 @@
 import { describe, test, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 
 import { QuestionCard } from './index';
 
 describe('Question Card', () => {
-  const wrapper = shallowMount(QuestionCard, {
+  const wrapper = mount(QuestionCard, {
     propsData: {
       question: {
         id: 0,
