@@ -4,6 +4,7 @@ import {
 } from 'vue';
 import isNil from 'lodash/isNil';
 import type { propType } from 'vue';
+import { RadioButtons } from '@/shared';
 import type { Question, Answer } from './lib/types';
 
 const props = defineProps({
@@ -24,25 +25,14 @@ const handleAnswer = () => emit('on-answer', selectedAnswer.value);
 <template>
   <v-card class="card mt-10" :title="question.title" theme="dark">
     <img class="card__background" :src="props.question.img" alt="img"/>
-    <v-radio-group v-model="selectedAnswerId" class="ml-5">
-      <v-radio
-        v-for="answer in question.answers"
-        :key="answer.id"
-        :label="answer.value"
-        :value="answer.points"
-        color="success"
-        false-icon="far fa-circle-dot"
-        true-icon="far fa-circle-dot"
-      />
-    </v-radio-group>
-    <v-btn
-        class="card__button"
+    <radio-buttons v-model="selectedAnswerId" :options="question.answers"/>
+    <button
+        :class="isNil(selectedAnswerId) ? 'card__button card__button_disabled' : 'card__button'"
         :disabled="isNil(selectedAnswerId)"
-        color="success"
         @click="handleAnswer"
     >
       Ответить
-    </v-btn>
+    </button>
   </v-card>
 </template>
 
@@ -60,5 +50,14 @@ const handleAnswer = () => emit('on-answer', selectedAnswer.value);
   pointer-events: none;
   opacity: .05;
   object-fit: cover;
+}
+
+.card__button {
+  background: rgb(60, 179, 113);
+}
+
+.card__button_disabled {
+  background: #101010;
+  color: #282828;
 }
 </style>
