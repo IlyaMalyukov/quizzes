@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest'
 import { shallowMount, mount, flushPromises } from '@vue/test-utils';
 
 import { router } from '@/app/router'
-import { QuizCard } from '@/entities';
+import { QuizCard } from './index';
 
 
 describe('Quiz Card', () => {
@@ -18,8 +18,10 @@ describe('Quiz Card', () => {
     });
 
     test('Quiz Card has props "quiz"', () => {
-        expect(wrapper.props().quiz.id).toBe(0);
-        expect(wrapper.props().quiz.title).toBe('New super quiz');
+        const props = wrapper.props();
+
+        expect(props.quiz.id).toBe(0);
+        expect(props.quiz.title).toBe('New super quiz');
     });
 
     // test('Router renders single quiz page when clicking a button', async () => {
