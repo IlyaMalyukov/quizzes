@@ -1,6 +1,5 @@
 import { describe, test, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils';
-import { ref } from 'vue';
 
 import { QuestionCard } from './index';
 
