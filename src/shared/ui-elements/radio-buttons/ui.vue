@@ -1,24 +1,7 @@
-<template>
-<div class="radios" >
-    <label
-      :class="option.id === modelValue ? 'radio radio_selected' : 'radio'"
-      v-for="option in options" :key="option.id"
-    >
-      <input
-        type="radio"
-        :value="option.id"
-        v-model="selectedOption"
-        @change="updateModelValue"
-      >
-      <span> {{ option.value }} </span>
-    </label>
-</div>
-</template>
-
 <script setup lang="ts">
 import { PropType, ref } from 'vue';
 
-type Option = { id: number, value: string, points: number };
+type Option = { id: number, value: string, points?: number };
 
 const props = defineProps({
   options: {
@@ -34,6 +17,23 @@ const selectedOption = ref(props.modelValue);
 
 const updateModelValue = () => { emit('update:modelValue', selectedOption.value); };
 </script>
+
+<template>
+<div class="radios" >
+  <label
+    :class="option.id === modelValue ? 'radio radio_selected' : 'radio'"
+    v-for="option in options" :key="option.id"
+  >
+    <input
+      type="radio"
+      :value="option.id"
+      v-model="selectedOption"
+      @change="updateModelValue"
+    >
+    <span> {{ option.value }} </span>
+  </label>
+</div>
+</template>
 
 <style scoped>
 .radios {
