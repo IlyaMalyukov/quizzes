@@ -1,5 +1,6 @@
 import { describe, test, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils';
+import { ref } from 'vue';
 
 import { QuestionCard } from './index';
 
@@ -29,5 +30,19 @@ describe('Question Card', () => {
     expect(props.question.title).toBe('Как дела?');
     expect(props.question.img).toBe('https://i.ibb.co/myMkKBj/orbit.webp');
     expect(props.question.answers.length).toBe(2);
+  });
+
+  test('Select answer should has value', () => {
+    const input = wrapper.find('input');
+    const button = wrapper.find('button');
+
+    expect(wrapper.vm.selectedAnswerId).toBe(undefined);
+
+    input.trigger('change');
+    button.trigger('click');
+
+    expect(wrapper.vm.selectedAnswerId).toBe(1);
+
+    expect(wrapper.vm.selectedAnswer.title).toBe('Плохо');
   });
 });
