@@ -22,6 +22,8 @@ const useQuizPage = () => {
 
   const error = ref('');
 
+  const result = ref(null);
+
   const getQuiz = async () => {
     try {
       quiz.value = await agent.getQuizById(quizId);
@@ -47,6 +49,7 @@ const useQuizPage = () => {
     points,
     totalQuestions,
     error,
+    result,
     toAnswer,
   }
 };

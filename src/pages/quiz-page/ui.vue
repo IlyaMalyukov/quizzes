@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { QuestionCard } from '@/widgets';
+import { ResultCard } from '@/entities';
 import useQuizPage from './lib';
 
 const {
@@ -8,6 +9,7 @@ const {
   points,
   totalQuestions,
   error,
+  result,
   toAnswer,
 } = useQuizPage();
 </script>
@@ -15,12 +17,17 @@ const {
 <template>
   <h1> {{ quiz.title }} </h1>
   <div class="error"> {{ error }} </div>
-  <div v-if="totalQuestions > currentQuestionIndex">
+
+  <div v-if="result">
+    <result-card :result="result" :points="points" />
+  </div>
+
+  <div>
     <div v-for="(question, index) in quiz?.questions" :key="question.id">
       <div v-if="index === currentQuestionIndex">
         <question-card
-            :question="question"
-            @on-answer="toAnswer"
+          :question="question"
+          @on-answer="toAnswer"
         />
       </div>
     </div>
