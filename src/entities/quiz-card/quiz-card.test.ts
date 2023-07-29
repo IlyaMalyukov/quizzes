@@ -11,7 +11,7 @@ describe('Quiz Card', () => {
         },
     });
 
-    test('mount component', () => {
+    test('Mount component', () => {
         expect(wrapper.exists()).toBeTruthy();
     });
 
