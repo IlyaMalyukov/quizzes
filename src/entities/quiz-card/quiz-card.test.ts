@@ -1,4 +1,4 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test, expect } from 'vitest';
 import { shallowMount, mount, flushPromises } from '@vue/test-utils';
 
 import { router } from '@/app/router';
