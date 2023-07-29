@@ -5,12 +5,13 @@ import useQuizPage from './lib';
 const {
   quiz,
   currentQuestion,
+  points,
   toAnswer,
 } = useQuizPage();
 </script>
 
 <template>
-  <div v-for="(question, index) in quiz.questions" :key="question.id">
+  <div v-for="(question, index) in quiz?.questions" :key="question.id">
     <div v-if="index === currentQuestion">
       <h1> {{ quiz.title }} </h1>
       <question-card

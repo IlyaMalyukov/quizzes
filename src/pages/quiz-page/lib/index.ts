@@ -9,23 +9,27 @@ const useQuizPage = () => {
 
   const agent = getQuizDataAgent();
 
-  const quizId = <string>route.query.id;
+  const quizId = <string>route?.query?.id;
 
   const quiz: Ref<Quiz> = ref({});
 
   const currentQuestion = ref(0);
+
+  const points = ref(0);
 
   onMounted(async () => {
     quiz.value = await agent.getQuizById(quizId);
   });
 
   const toAnswer = (answer: Answer) => {
-    console.log(answer);
+    currentQuestion.value += 1;
+    points.value += answer.points;
   };
 
   return {
     quiz,
     currentQuestion,
+    points,
     toAnswer,
   }
 };
