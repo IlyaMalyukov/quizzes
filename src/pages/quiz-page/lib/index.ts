@@ -13,23 +13,26 @@ const useQuizPage = () => {
 
   const quiz: Ref<Quiz> = ref({});
 
-  const currentQuestion = ref(0);
+  const currentQuestionIndex = ref(0);
 
   const points = ref(0);
+
+  const totalQuestions = quiz?.questions?.length ?? undefined;
 
   onMounted(async () => {
     quiz.value = await agent.getQuizById(quizId);
   });
 
   const toAnswer = (answer: Answer) => {
-    currentQuestion.value += 1;
+    currentQuestionIndex.value += 1;
     points.value += answer.points;
   };
 
   return {
     quiz,
-    currentQuestion,
+    currentQuestionIndex,
     points,
+    totalQuestions,
     toAnswer,
   }
 };
