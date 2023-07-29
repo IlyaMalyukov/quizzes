@@ -7,7 +7,6 @@ describe('Result Card', () => {
   const wrapper = shallowMount(ResultCard, {
     propsData: {
       result: { id: 0, value: 'Sorry you’re not a winner' },
-      points: 1,
     },
   });
 
@@ -20,7 +19,5 @@ describe('Result Card', () => {
 
     expect(props.result.id).toBe(0);
     expect(props.result.value).toBe('Sorry you’re not a winner');
-
-    expect(props.points).toBe(1);
   });
 });
