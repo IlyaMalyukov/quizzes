@@ -11,10 +11,17 @@ type Question = {
   answers: Answer[];
 };
 
+type Result = {
+  id: number;
+  value: string;
+  points_to_achieve: number;
+}
+
 type Quiz = {
   id: string;
   title: string;
   questions: Question[];
+  results: Result[];
 };
 
 export type {

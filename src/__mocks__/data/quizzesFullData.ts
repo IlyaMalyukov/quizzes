@@ -62,18 +62,22 @@ export const quizzesFullData = [
             {
                 id: 0,
                 value: 'Ты Гарри Поттер!',
+                points_to_achieve: 0,
             },
             {
                 id: 1,
                 value: 'Ты Полумна Лавгуд!',
+                points_to_achieve: 1,
             },
             {
                 id: 2,
                 value: 'Ты Ньют Саламандер!',
+                points_to_achieve: 2,
             },
             {
                 id: 3,
                 value: 'Ты Белатриса Лестрейндж!',
+                points_to_achieve: 3,
             }
         ],
     },
@@ -102,7 +106,8 @@ export const quizzesFullData = [
         results: [
             {
                 id: 0,
-                value: 'Ты молодец! На все вопросы ответил правильно'
+                value: 'Ты молодец! На все вопросы ответил правильно',
+                points_to_achieve: 0,
             }
         ],
     },
@@ -136,15 +141,18 @@ export const quizzesFullData = [
         results: [
             {
                 id: 0,
-                value: 'Ты Orbit'
+                value: 'Ты Orbit',
+                points_to_achieve: 0,
             },
             {
                 id: 1,
-                value: 'Ты Hubba Bubba'
+                value: 'Ты Hubba Bubba',
+                points_to_achieve: 1,
             },
             {
                 id: 2,
-                value: 'Ты Love is'
+                value: 'Ты Love is',
+                points_to_achieve: 2,
             },
         ],
     }
