@@ -1,5 +1,6 @@
 import { useRoute } from 'vue-router';
 import {onMounted, Ref, ref} from 'vue';
+import { ERRORS } from '@/shared';
 import type { Answer } from '@/widgets';
 import { getQuizDataAgent } from '../api';
 import { Quiz } from './types';
@@ -27,7 +28,7 @@ const useQuizPage = () => {
 
       totalQuestions.value = quiz.value.questions.length;
     } catch (err) {
-      error.value = 'Не удалось загрузить квизы';
+      error.value = ERRORS.LOAD_QUIZ;
     }
   };
 
