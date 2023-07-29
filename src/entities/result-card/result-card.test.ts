@@ -7,6 +7,7 @@ describe('Result Card', () => {
   const wrapper = shallowMount(ResultCard, {
     propsData: {
       result: { id: 0, value: 'Sorry you’re not a winner' },
+      points: 1,
     },
   });
 
