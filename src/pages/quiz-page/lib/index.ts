@@ -17,10 +17,22 @@ const useQuizPage = () => {
 
   const points = ref(0);
 
-  const totalQuestions = quiz?.questions?.length ?? undefined;
+  const totalQuestions = ref(0);
+
+  const error = ref('');
+
+  const getQuiz = async () => {
+    try {
+      quiz.value = await agent.getQuizById(quizId);
+
+      totalQuestions.value = quiz.value.questions.length;
+    } catch (err) {
+      error.value = 'Не удалось загрузить квизы';
+    }
+  };
 
   onMounted(async () => {
-    quiz.value = await agent.getQuizById(quizId);
+    await getQuiz();
   });
 
   const toAnswer = (answer: Answer) => {
@@ -33,6 +45,7 @@ const useQuizPage = () => {
     currentQuestionIndex,
     points,
     totalQuestions,
+    error,
     toAnswer,
   }
 };

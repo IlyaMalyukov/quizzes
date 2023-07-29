@@ -7,21 +7,26 @@ const {
   currentQuestionIndex,
   points,
   totalQuestions,
+  error,
   toAnswer,
 } = useQuizPage();
 </script>
 
 <template>
-  <div v-if="totalQuestions < currentQuestionIndex">
+  <h1> {{ quiz.title }} </h1>
+  <div class="error"> {{ error }} </div>
+  <div v-if="totalQuestions > currentQuestionIndex">
     <div v-for="(question, index) in quiz?.questions" :key="question.id">
       <div v-if="index === currentQuestionIndex">
-        <h1> {{ quiz.title }} </h1>
         <question-card
             :question="question"
             @on-answer="toAnswer"
         />
       </div>
     </div>
+  </div>
+  <div v-else>
+    Тут должен быт результат
   </div>
 
 </template>
