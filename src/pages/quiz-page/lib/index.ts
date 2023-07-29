@@ -2,8 +2,9 @@ import { useRoute } from 'vue-router';
 import {onMounted, Ref, ref} from 'vue';
 import { ERRORS } from '@/shared';
 import type { Answer } from '@/widgets';
+import type { Result } from '@/entities';
 import { getQuizDataAgent } from '../api';
-import { Quiz } from './types';
+import type { Quiz } from './types';
 
 const useQuizPage = () => {
   const route = useRoute();
@@ -22,7 +23,7 @@ const useQuizPage = () => {
 
   const error = ref('');
 
-  const result = ref(null);
+  const result: Ref<Result> = ref(null);
 
   const getQuiz = async () => {
     try {
@@ -38,9 +39,17 @@ const useQuizPage = () => {
     await getQuiz();
   });
 
+  const getResult = () => {
+    result.value = quiz.value.results.find((i: Result) => i.points_to_achieve === points.value);
+  };
+
   const toAnswer = (answer: Answer) => {
     currentQuestionIndex.value += 1;
     points.value += answer.points;
+
+    if (totalQuestions.value === currentQuestionIndex.value) {
+      getResult();
+    }
   };
 
   return {
