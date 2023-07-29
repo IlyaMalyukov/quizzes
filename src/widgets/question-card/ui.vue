@@ -26,11 +26,7 @@ const handleAnswer = () => emit('on-answer', selectedAnswer.value);
   <v-card class="card mt-10" :title="question.title" theme="dark">
     <img class="card__background" :src="props.question.img" alt="img"/>
     <radio-buttons v-model="selectedAnswerId" :options="question.answers"/>
-    <button
-        :class="isNil(selectedAnswerId) ? 'card__button card__button_disabled' : 'card__button'"
-        :disabled="isNil(selectedAnswerId)"
-        @click="handleAnswer"
-    >
+    <button :disabled="isNil(selectedAnswerId)" @click="handleAnswer">
       Ответить
     </button>
   </v-card>
@@ -50,14 +46,5 @@ const handleAnswer = () => emit('on-answer', selectedAnswer.value);
   pointer-events: none;
   opacity: .05;
   object-fit: cover;
-}
-
-.card__button {
-  background: rgb(60, 179, 113);
-}
-
-.card__button_disabled {
-  background: #101010;
-  color: #282828;
 }
 </style>
