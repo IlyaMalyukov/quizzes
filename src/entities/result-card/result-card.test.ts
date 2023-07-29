@@ -14,10 +14,12 @@ describe('Result Card', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 
-  test('Result Card has props "result"', () => {
+  test('Result Card has props "result" and "points"', () => {
     const props = wrapper.props();
 
     expect(props.result.id).toBe(0);
     expect(props.result.value).toBe('Sorry you’re not a winner');
+
+    expect(props.points).toBe(1);
   });
 });
