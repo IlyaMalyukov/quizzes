@@ -32,8 +32,4 @@ const {
       </div>
     </div>
   </div>
-  <div v-else>
-    Тут должен быт результат
-  </div>
-
 </template>
