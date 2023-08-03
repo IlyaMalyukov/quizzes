@@ -43,12 +43,12 @@ export const quizzesFullData = [
                     {
                         id: 1,
                         value: 'Lumos',
-                        points: 1,
+                        points: 0,
                     },
                     {
                         id: 2,
                         value: 'Petrificus Totalus',
-                        points: 2,
+                        points: 0,
                     },
                     {
                         id: 3,
@@ -63,21 +63,43 @@ export const quizzesFullData = [
                 id: 0,
                 value: 'Ты Гарри Поттер!',
                 points_to_achieve: 0,
+                img: 'https://i.ibb.co/Tq58N7b/harry.webp'
             },
             {
                 id: 1,
                 value: 'Ты Полумна Лавгуд!',
                 points_to_achieve: 1,
+                img: 'https://i.ibb.co/nDCsXxf/luna.jpg',
             },
             {
                 id: 2,
                 value: 'Ты Ньют Саламандер!',
                 points_to_achieve: 2,
+                img: 'https://i.ibb.co/ySLPfQ9/salamander.webp',
             },
             {
                 id: 3,
-                value: 'Ты Белатриса Лестрейндж!',
+                value: 'Ты Аргус Филч!',
                 points_to_achieve: 3,
+                img: 'https://i.ibb.co/kM9ckvL/filch.webp',
+            },
+            {
+                id: 4,
+                value: 'Ты Винсент Крэбб!',
+                points_to_achieve: 4,
+                img: 'https://i.ibb.co/ByY7T30/crabbe.webp',
+            },
+            {
+                id: 4,
+                value: 'Ты Грегори Гойл!',
+                points_to_achieve: 5,
+                img: 'https://i.ibb.co/MCpHDg9/gregory.jpg',
+            },
+            {
+                id: 6,
+                value: 'Ты Белатриса Лестрейндж!',
+                points_to_achieve: 6,
+                img: 'https://i.ibb.co/xh8XNdH/bellatrix.webp',
             }
         ],
     },
@@ -108,6 +130,7 @@ export const quizzesFullData = [
                 id: 0,
                 value: 'Ты молодец! На все вопросы ответил правильно',
                 points_to_achieve: 0,
+                img: 'https://i.ibb.co/XyyWtwb/238922.jpg',
             }
         ],
     },
@@ -143,16 +166,19 @@ export const quizzesFullData = [
                 id: 0,
                 value: 'Ты Orbit',
                 points_to_achieve: 0,
+                img: 'https://i.ibb.co/q9L5KDC/orbit.webp',
             },
             {
                 id: 1,
                 value: 'Ты Hubba Bubba',
                 points_to_achieve: 1,
+                img: 'https://i.ibb.co/wRHRzQ2/hubba-bubba.jpg',
             },
             {
                 id: 2,
                 value: 'Ты Love is',
                 points_to_achieve: 2,
+                img: 'https://i.ibb.co/GRDQY8n/love-is.jpg',
             },
         ],
     }
