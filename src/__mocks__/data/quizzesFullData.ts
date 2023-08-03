@@ -115,12 +115,12 @@ export const quizzesFullData = [
                     {
                         id: 0,
                         value: 'Ничего',
-                        points: 1,
+                        points: 0,
                     },
                     {
                         id: 1,
                         value: 'Учить таблицу умножения',
-                        points: 1,
+                        points: 0,
                     }
                 ],
             },
@@ -164,19 +164,19 @@ export const quizzesFullData = [
         results: [
             {
                 id: 0,
-                value: 'Ты Orbit',
+                value: 'Значит, ты Orbit',
                 points_to_achieve: 0,
                 img: 'https://i.ibb.co/q9L5KDC/orbit.webp',
             },
             {
                 id: 1,
-                value: 'Ты Hubba Bubba',
+                value: 'Значит, ты Hubba Bubba',
                 points_to_achieve: 1,
                 img: 'https://i.ibb.co/wRHRzQ2/hubba-bubba.jpg',
             },
             {
                 id: 2,
-                value: 'Ты Love is',
+                value: 'Значит, ты Love is',
                 points_to_achieve: 2,
                 img: 'https://i.ibb.co/GRDQY8n/love-is.jpg',
             },
