@@ -11,7 +11,7 @@ describe('Result Card', () => {
 
   const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
   });
 
   const wrapper = mount(ResultCard, {
