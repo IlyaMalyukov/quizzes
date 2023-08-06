@@ -18,18 +18,7 @@ describe('Main Page', () => {
         expect(wrapper.text()).toContain('Квизы');
     });
 
-    test('Expected action "getQuizzesList" have been called', () => {
-        const wrapper = shallowMount(MainPage, {
-            global: {
-                plugins: [createTestingPinia({
-                    initialState: {
-                        list: ref([]),
-                    },
-                    createSpy: vi.fn,
-                })],
-            },
-        });
-
+    test('Expected action "getQuizzesList" have been called without params', () => {
         const store = useQuizzesStore();
 
         expect(store.getQuizzesList).toHaveBeenCalledTimes(1);
