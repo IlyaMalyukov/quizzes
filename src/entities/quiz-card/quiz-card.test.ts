@@ -1,11 +1,22 @@
 import { describe, test, expect } from 'vitest';
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import { QuizCard } from './index';
 
 
 describe('Quiz Card', () => {
-    const wrapper = shallowMount(QuizCard, {
+    const routes = [
+        { path: '/quiz', name: 'quiz-page', component: { template: '<div>Пройти квиз</div>' }, },
+    ];
+
+    const router = createRouter({
+        history: createWebHistory(),
+        routes,
+    });
+
+    const wrapper = mount(QuizCard, {
+        global: { plugins: [router] },
         propsData: {
             quiz: { id: 0, title: 'New super quiz' }
         },
@@ -20,5 +31,15 @@ describe('Quiz Card', () => {
 
         expect(props.quiz.id).toBe(0);
         expect(props.quiz.title).toBe('New super quiz');
+    });
+
+    test('Render router-link to "Пройти квиз" with query "id" === 0', async () => {
+        const link = wrapper.find('a');
+
+        expect(link.text()).toBe('Пройти квиз');
+
+        await router.push({ name: 'quiz-page', query: { id: 0 } });
+
+        expect(link.attributes('href')).toBe('/quiz?id=0');
     });
 });
