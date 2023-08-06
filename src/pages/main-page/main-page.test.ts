@@ -6,6 +6,7 @@ import { createPinia, setActivePinia } from 'pinia';
 
 import { MainPage } from '@/pages/main-page';
 import { useQuizzesStore } from '@/app/stores/quizzes';
+import { createTestingPinia } from '@pinia/testing';
 
 describe('Main Page', () => {
     beforeEach(() => {
@@ -19,6 +20,17 @@ describe('Main Page', () => {
     });
 
     test('Expected action "getQuizzesList" have been called without params', () => {
+        const wrapper = shallowMount(MainPage, {
+            global: {
+                plugins: [createTestingPinia({
+                    initialState: {
+                        list: ref([]),
+                    },
+                    createSpy: vi.fn,
+                })],
+            },
+        });
+
         const store = useQuizzesStore();
 
         expect(store.getQuizzesList).toHaveBeenCalledTimes(1);
