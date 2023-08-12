@@ -5,6 +5,7 @@ import Vue from '@vitejs/plugin-vue'
 import path from 'path'
 
 export default defineConfig({
+    setupFilesAfterEnv: ['./__mocks__/server'],
     plugins: [
         Vue(),
     ],
