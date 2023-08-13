@@ -1,15 +1,17 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { mount, shallowMount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
+import { createTestingPinia } from '@pinia/testing';
 import { ref } from 'vue';
 
 import { MainPage } from '@/pages/main-page';
 import { useQuizzesStore } from '@/app/stores/quizzes';
-import { createTestingPinia } from '@pinia/testing';
+import { server } from '@/__mocks__/server';
 
 describe('Main Page', () => {
     beforeEach(() => {
         setActivePinia(createPinia());
+        server.listen();
     });
 
     test('Main Page renders title correctly', () => {
@@ -51,6 +53,8 @@ describe('Main Page', () => {
         // expect(wrapper.quizzesList).toHaveLength(3)
         // исправить ошибку из-за axios
         expect(wrapper.isLoading).toBeFalsy();
+
+        expect(store.list).toHaveLength(3);
     });
 });
 
