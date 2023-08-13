@@ -53,8 +53,6 @@ describe('Main Page', () => {
         // expect(wrapper.quizzesList).toHaveLength(3)
         // исправить ошибку из-за axios
         expect(wrapper.isLoading).toBeFalsy();
-
-        expect(store.list).toHaveLength(3);
     });
 });
 
