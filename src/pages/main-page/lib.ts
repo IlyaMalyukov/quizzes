@@ -10,12 +10,13 @@ const useMainPage = () => {
 
     const loadQuizzes = async () => await quizzesStore.getQuizzesList();
 
+    const quizzesList: Ref<QuizzesList> = ref([]);
+
     onMounted(async () => {
         await loadQuizzes();
+        quizzesList.value  = quizzesStore.list;
         isLoading.value = false;
     });
-
-    const quizzesList: QuizzesList = quizzesStore.list;
 
     return {
         isLoading,

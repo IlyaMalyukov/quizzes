@@ -17,6 +17,7 @@ const {
     <loader v-if="isLoading"/>
     <div v-else class="quiz-cards">
       <quiz-card v-for="quiz in quizzesList" :key="quiz.id" :quiz="quiz"/>
+      <pre> {{ quizzesList }} </pre>
     </div>
   </div>
 </template>
