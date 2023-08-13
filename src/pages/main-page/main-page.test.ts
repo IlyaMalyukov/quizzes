@@ -49,6 +49,8 @@ describe('Main Page', () => {
 
         await store.getQuizzesList();
 
+        await wrapper.vm.$nextTick();
+
         // TO DO проверять наличие элементов в quizzesList
         // expect(wrapper.vm.quizzesList).toHaveLength(3)
         // исправить ошибку из-за axios
