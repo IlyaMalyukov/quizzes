@@ -47,6 +47,8 @@ describe('Main Page', () => {
 
         const store = useQuizzesStore();
 
+        expect(wrapper.vm.isLoading).toBeTruthy();
+
         await store.getQuizzesList();
 
         await wrapper.vm.$nextTick();
@@ -54,7 +56,6 @@ describe('Main Page', () => {
         // TO DO проверять наличие элементов в quizzesList
         // expect(wrapper.vm.quizzesList).toHaveLength(3)
         // исправить ошибку из-за axios
-        expect(wrapper.isLoading).toBeFalsy();
     });
 });
 
