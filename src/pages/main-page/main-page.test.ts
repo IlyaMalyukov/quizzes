@@ -50,7 +50,7 @@ describe('Main Page', () => {
         await store.getQuizzesList();
 
         // TO DO проверять наличие элементов в quizzesList
-        // expect(wrapper.quizzesList).toHaveLength(3)
+        // expect(wrapper.vm.quizzesList).toHaveLength(3)
         // исправить ошибку из-за axios
         expect(wrapper.isLoading).toBeFalsy();
     });
