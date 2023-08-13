@@ -8,7 +8,7 @@ import { MainPage } from '@/pages/main-page';
 import { useQuizzesStore } from '@/app/stores/quizzes';
 import { server } from '@/__mocks__/server';
 
-describe('Main Page', () => {
+describe('Main Page', async () => {
     beforeEach(() => {
         setActivePinia(createPinia());
         server.listen();
@@ -38,7 +38,7 @@ describe('Main Page', () => {
         expect(store.getQuizzesList).toHaveBeenLastCalledWith();
     });
 
-    test('Mock data will be loaded with using store and axios', async () => {
+    await test('Mock data will be loaded with using store and axios', async () => {
         const wrapper = mount(MainPage, {
             global: {
                 plugins: [createPinia()],
@@ -52,6 +52,8 @@ describe('Main Page', () => {
         await store.getQuizzesList();
 
         await wrapper.vm.$nextTick();
+
+        expect(wrapper.vm.isLoading).toBeFalsy();
 
         // TO DO проверять наличие элементов в quizzesList
         // expect(wrapper.vm.quizzesList).toHaveLength(3)
