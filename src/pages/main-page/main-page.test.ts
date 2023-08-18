@@ -55,7 +55,6 @@ describe('Main Page', () => {
 
         // TO DO проверять наличие элементов в quizzesList
         // expect(wrapper.vm.quizzesList).toHaveLength(3)
-        // исправить ошибку из-за axios
     });
 });
 
