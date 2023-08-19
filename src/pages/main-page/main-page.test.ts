@@ -47,6 +47,12 @@ describe('Main Page', () => {
 
         const store = useQuizzesStore();
 
+        vi.spyOn<any, any>(store, 'getQuizzesList').mockReturnValueOnce([
+            { id: 0, name: 'Quiz 1' },
+            { id: 1, name: 'Quiz 2' },
+            { id: 2, name: 'Quiz 3' },
+        ]);
+
         expect(wrapper.vm.isLoading).toBeTruthy();
 
         await store.getQuizzesList();
