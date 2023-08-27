@@ -55,12 +55,12 @@ describe('Main Page', () => {
 
         expect(wrapper.vm.isLoading).toBeTruthy();
 
-        await store.getQuizzesList();
+        // TO DO разобраться как тестить такие случаи
+        // getQuizzesList добавляет загруженные данные в state, а не возвращает их
 
-        await wrapper.vm.$nextTick();
+        const quizzesList = await store.getQuizzesList();
 
-        // TO DO проверять наличие элементов в quizzesList
-        // expect(wrapper.vm.quizzesList).toHaveLength(3)
+        expect(quizzesList).toHaveLength(3)
     });
 });
 
