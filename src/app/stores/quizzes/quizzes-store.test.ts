@@ -24,9 +24,11 @@ describe('Quizzes Store', () => {
             { id: 2, name: 'Quiz 3' },
         ]);
 
-        await quizzesStore.getQuizzesList();
+        // TO DO разобраться как тестить такие случаи
+        // getQuizzesList добавляет загруженные данные в state, а не возвращает их
 
-        // TO DO разобраться почему не работает
-        // expect(quizzesStore.list).toHaveLength(3);
+        const list = await quizzesStore.getQuizzesList();
+
+        expect(list).toHaveLength(3);
     });
 });
